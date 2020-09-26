@@ -2,6 +2,9 @@ import React from "react";
 import "./App.css";
 import { Cards, Charts, CountryPicker } from "./components";
 import { fetchData } from "./api/index";
+
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
