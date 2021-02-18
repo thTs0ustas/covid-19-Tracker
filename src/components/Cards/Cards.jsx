@@ -11,7 +11,7 @@ export const Cards = ({
   }
   return (
     <div className="container">
-      <Grid container spacing={3} justify="center">
+      <Grid container spacing={1} justify="center">
         <Grid item component={Card} xs={12} md={3} className={`card infected`}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
@@ -28,9 +28,7 @@ export const Cards = ({
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
-            <Typography variant="body2">
-              Number of active cases of COVID-19
-            </Typography>
+            <Typography variant="body2">Number of active cases</Typography>
           </CardContent>
         </Grid>
         <Grid
@@ -38,7 +36,8 @@ export const Cards = ({
           component={Card}
           xs={12}
           md={3}
-          className={`card recoveries`}>
+          className={`card recoveries`}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Recovered
@@ -55,8 +54,11 @@ export const Cards = ({
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
+            <Typography variant="body2">Number of recoveries</Typography>
             <Typography variant="body2">
-              Number of recoveries from COVID-19
+              {`Recovery rate: ${Math.round(
+                (recovered.value / confirmed.value) * 100
+              )}%`}
             </Typography>
           </CardContent>
         </Grid>
@@ -77,8 +79,11 @@ export const Cards = ({
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
+            <Typography variant="body2">Number of deaths</Typography>
             <Typography variant="body2">
-              Number of deaths of COVID-19
+              {`Mortality rate: ${Math.round(
+                (deaths.value / confirmed.value) * 100
+              )}%`}
             </Typography>
           </CardContent>
         </Grid>
