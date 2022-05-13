@@ -11,7 +11,7 @@ export const Cards = ({
   }
   return (
     <div className="container">
-      <Grid container spacing={1} justify="center">
+      <Grid container spacing={1} justifyContent="center">
         <Grid item component={Card} xs={12} md={3} className={`card infected`}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
