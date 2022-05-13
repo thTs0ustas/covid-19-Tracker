@@ -7,6 +7,7 @@ export const fetchData = async (country) => {
       changeableUrl = `${url}/countries/${country}`;
     }
     const response = await fetch(changeableUrl);
+    // api problem with recoveries - response 0
     const { confirmed, recovered, deaths, lastUpdate } = await response.json();
 
     return {
